@@ -59,7 +59,7 @@
 	</section>
 	<section class="card">
 		<h4 class="card-header">Explore</h4>
-		<form>
+		<form onsubmit="getMyCount(event)">
 			<div class="form-group">
 				<label for="countQueryRepositoryInput">Repository</label>
 				<input type="text" class="form-control" id="countQueryRepositoryInput" placeholder="Type repository name here">
@@ -76,6 +76,6 @@
 	<script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
+    <script src="./js/index.js"></script>
 </body>
 </html>
