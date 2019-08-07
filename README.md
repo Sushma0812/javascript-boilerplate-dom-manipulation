@@ -25,3 +25,20 @@
 2. fetch api 
 3. how to work on api. 
 
+
+## session 6
+
+- Understanding ES6.
+1. Fetch Api
+    - better way to write xmlhttprequests.
+
+2. promises.
+    - the Promise object have reject or resolve condition as a return.
+    - better the callbacks. 
+    - No hell condition.
+    - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+    
+3. Async await
+
+4. closers
+

@@ -1,33 +1,52 @@
 function getRepo(cb){
-    const httpRequest = new XMLHttpRequest();
-    httpRequest.open("GET",'https://gitlab-cts.stackroute.in/api/v4/projects');
-    httpRequest.setRequestHeader('Private-Token','LTYzFYWJ2jzyGhmsE1gR')
-    httpRequest.onreadystatechange = () => {
-        if(httpRequest.readyState === 4){
-            cb(null,JSON.parse(httpRequest.response));
+    // const httpRequest = new XMLHttpRequest();
+    // httpRequest.open("GET",'https://gitlab-cts.stackroute.in/api/v4/projects');
+    // httpRequest.setRequestHeader('Private-Token','LTYzFYWJ2jzyGhmsE1gR')
+    // httpRequest.onreadystatechange = () => {
+    //     if(httpRequest.readyState === 4){
+    //         cb(null,JSON.parse(httpRequest.response));
             
+    //     }
+    // }
+    // httpRequest.send();
+    fetch('https://gitlab-cts.stackroute.in/api/v4/projects',{
+        headers: {
+            'Private-Token': 'LTYzFYWJ2jzyGhmsE1gR',
         }
-    }
-    httpRequest.send();
+    })
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(myJson) {
+   cb(null,myJson)
+  });
 }
 
 function getIssues(repositoryId,cb){
-    const httpRequest = new XMLHttpRequest();
-    httpRequest.open("GET",`https://gitlab-cts.stackroute.in/api/v4/projects/${repositoryId}/issues`);
-    httpRequest.setRequestHeader('Private-Token','LTYzFYWJ2jzyGhmsE1gR')
-    httpRequest.onreadystatechange = () => {
-        if(httpRequest.readyState === 4){
-            cb(null,JSON.parse(httpRequest.response));
+    // const httpRequest = new XMLHttpRequest();
+    // httpRequest.open("GET",`https://gitlab-cts.stackroute.in/api/v4/projects/${repositoryId}/issues`);
+    // httpRequest.setRequestHeader('Private-Token','LTYzFYWJ2jzyGhmsE1gR')
+    // httpRequest.onreadystatechange = () => {
+    //     if(httpRequest.readyState === 4){
+    //         cb(null,JSON.parse(httpRequest.response));
             
+    //     }
+    // }
+    // httpRequest.send();
+    fetch(`https://gitlab-cts.stackroute.in/api/v4/projects/${repositoryId}/issues`,{
+        headers: {
+            'Private-Token': 'LTYzFYWJ2jzyGhmsE1gR',
         }
-    }
-    httpRequest.send();
+    })
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(myJson) {
+   cb(null,myJson)
+  });
 
 }
-// getIssues(32557,(err,issues)=>{
-//     console.log(issues);
-    
-// })
+
 getRepo((err,repositories) => {
      const tbody= document.getElementsByTagName('tbody')[0];
      let tbodyInnerHtml = "";
